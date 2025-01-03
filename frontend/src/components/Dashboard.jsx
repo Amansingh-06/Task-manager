@@ -14,7 +14,7 @@ const Dashboard = ({ token }) => {
     useEffect(() => {
         const fetchTasks = async () => {
             try {
-                const response = await fetch('http://localhost:8000/api/tasks', {
+                const response = await fetch('https://task-manager-5-cmv8.onrender.com/api/tasks', {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 const data = await response.json();
@@ -34,7 +34,7 @@ const Dashboard = ({ token }) => {
 
     const addTask = async () => {
         try {
-            const response = await fetch('http://localhost:8000/api/tasks', {
+            const response = await fetch('https://task-manager-5-cmv8.onrender.com/api/tasks', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ const Dashboard = ({ token }) => {
     const updateTask = async () => {
         if (!editingTask) return;
         try {
-            const response = await fetch(`http://localhost:8000/api/tasks/${editingTask._id}`, {
+            const response = await fetch(`https://task-manager-1-0qge.onrender.com/api/tasks/${editingTask._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ const Dashboard = ({ token }) => {
 
     const deleteTask = async (taskId) => {
         try {
-            const response = await fetch(`http://localhost:8000/api/tasks/${taskId}`, {
+            const response = await fetch(`https://task-manager-5-cmv8.onrender.com/api/tasks/${taskId}`, {
                 method: 'DELETE',
                 headers: { Authorization: `Bearer ${token}` },
             });
