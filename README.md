@@ -31,7 +31,7 @@ A task management dashboard built with React for managing tasks, including the a
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/task-management-dashboard.git
+    git clone https://github.com/Amansingh-06/Task-manager.git
     cd task-management-dashboard
     ```
 
