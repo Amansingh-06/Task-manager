@@ -13,7 +13,7 @@ const app = express();
 
 app.use(cors({
     origin: (origin, callback) => {
-        const allowedOrigins = ['http://localhost:5175', 'https://your-production-frontend-url.com'];
+        const allowedOrigins ='https://task-manager-uva8.vercel.app/';
         if (allowedOrigins.includes(origin) || !origin) {
             callback(null, true);
         } else {
