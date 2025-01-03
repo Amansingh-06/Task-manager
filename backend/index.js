@@ -10,23 +10,31 @@ connectDB();
 
 const app = express();
 
+// Define allowed origins
+const allowedOrigins = ['http://localhost:5175', 'https://task-manager-uva8.vercel.app'];
 
-app.use(cors({
-    origin: (origin, callback) => {
-        const allowedOrigins ='https://task-manager-uva8.vercel.app/';
-        if (allowedOrigins.includes(origin) || !origin) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-    credentials: true
-}));
+// Set up CORS
+app.use(
+    cors({
+        origin: (origin, callback) => {
+            // Allow requests with no origin (e.g., mobile apps, Postman)
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error('Not allowed by CORS'));
+            }
+        },
+        credentials: true, // Allow cookies and credentials
+    })
+);
 
+// Middleware to parse JSON
 app.use(express.json());
 
+// Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
 
-const PORT = 8000;
+// Start the server
+const PORT = 8000; // Use PORT from environment variables if available
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
