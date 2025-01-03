@@ -2,6 +2,9 @@
 
 A task management dashboard built with React for managing tasks, including the ability to add, update, and delete tasks. The application communicates with a RESTful API for task operations.
 
+## Deployment
+- https://task-manager-uva8.vercel.app/
+
 ## Features
 
 - Add new tasks with title, description, status, priority, and due date.
@@ -45,7 +48,7 @@ A task management dashboard built with React for managing tasks, including the a
     ```
 
 3. Set up your backend API (if not already running):
-    - Make sure your backend API is running on `http://localhost:8000` or modify the URLs in the code accordingly.
+    - Make sure your backend API is running on `http://localhost:8000
 
 4. Start the React development server:
     ```bash
